@@ -3,6 +3,9 @@ import json
 import vars
 from pprint import pprint
 
+# Disable self-signed warning
+requests.packages.urllib3.disable_warnings()
+
 # This scripts purpose is to pull all of the Address Objects from Panorama and save them as a CSV file.
 
 url = f"https://{vars.host}/restapi/v10.2/Objects/Addresses?location=shared"
